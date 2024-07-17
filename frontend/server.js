@@ -1,8 +1,10 @@
-const serve = require('serve');
-
-const server = serve(__dirname + '/build', {
-  port: 5000,
-  ignore: ['node_modules']
+//simple express server to run frontend production build;
+const express = require("express");
+const path = require("path");
+const app = express();
+app.use(express.static(path.join(__dirname, "build"), { maxAge: "1h" }));
+app.get("/*", function (req, res) {
+	res.setHeader('Cache-Control', 'no-store');
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
-
-console.log('Server is running on http://localhost:5000');
+app.listen(3000);
