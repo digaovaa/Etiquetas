@@ -10,13 +10,21 @@ const EtiquetasContainer = () => {
 
     const onDrop = (acceptedFiles) => {
         const file = acceptedFiles[0];
-        Papa.parse(file, {
-            header: true,
-            delimiter: ";",
-            complete: (results) => {
-                setData(results.data);
-            }
-        });
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            // Converta o arquivo lido para uma string UTF-8
+            const decoder = new TextDecoder("utf-8");
+            const utf8Text = decoder.decode(new Uint8Array(event.target.result));
+
+            Papa.parse(utf8Text, {
+                header: true,
+                delimiter: ";",
+                complete: (results) => {
+                    setData(results.data);
+                }
+            });
+        }
+        reader.readAsArrayBuffer(file);
     };
 
     const { getRootProps, getInputProps } = useDropzone({ onDrop });
