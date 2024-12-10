@@ -57,14 +57,15 @@ const EtiquetasVolume = () => {
                                     </div>
                                     <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #000', margin: -21, marginBottom: '10px', height: '76mm', paddingLeft: '20px' }}>
                                         <strong style={{ fontSize: '24px' }}>CARTON NO.:</strong>
-                                        <span style={{ fontSize: '92px', marginLeft: 'auto', fontWeight: 'bold' }}>{item.numero}</span>
-                                        <div style={{ marginLeft: 'auto', flexDirection: 'column', paddingRight: '20px' }}>
-                                            <QRCode value={item.caixa} size={230} />
-                                            <div style={{ marginTop: '10px' }}>
-                                                <div style={{ fontSize: '12px', textAlign: 'center', marginBottom: '15px', fontWeight: 'bold' }}>{item.caixa}</div>
+                                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                                            <span style={{ fontSize: '92px', fontWeight: 'bold', marginLeft: '10px' }}>{`${item.numero}`}</span>
+                                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingRight: '20px' }}>
+                                                <QRCode value={item.caixa} size={230} />
+                                                <div style={{ marginTop: '10px' }}>
+                                                    <div style={{ fontSize: '12px', textAlign: 'center', marginBottom: '15px', fontWeight: 'bold', marginLeft: '-30px' }}>{item.caixa}</div>
+                                                </div>
                                             </div>
                                         </div>
-
                                     </div>
                                     <div style={{ display: 'flex', justifyContent: 'space-between', height: '10mm', paddingLeft: '40px', paddingRight: '110px', marginBottom: '-10px' }}>
                                         <div><strong style={{ fontSize: '24px' }}>GROSS</strong></div>
