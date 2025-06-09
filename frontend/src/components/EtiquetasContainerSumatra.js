@@ -5,7 +5,7 @@ import { useDropzone } from 'react-dropzone';
 import Papa from 'papaparse';
 import QRCode from 'qrcode.react';
 
-const EtiquetasContainer = () => {
+const EtiquetasContainerSumatra = () => {
     const [data, setData] = useState([]);
 
     const onDrop = (acceptedFiles) => {
@@ -81,4 +81,4 @@ const EtiquetasContainer = () => {
     );
 };
 
-export default EtiquetasContainer;
+export default EtiquetasContainerSumatra;
