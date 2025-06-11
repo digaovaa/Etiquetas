@@ -46,20 +46,20 @@ const EtiquetasVolumeKT = () => {
                 <div className="label-container-a4">
                     {data.map((item, index) => (
                         item.caixa !== '' && (
-                            <div 
-                                key={index} 
-                                className="label-etiq-a4" 
-                                style={{ 
-                                    width: '210mm', 
-                                    height: '297mm', 
-                                    margin: '0mm auto', 
-                                    padding: '0mm', 
-                                    boxSizing: 'border-box', 
-                                    border: '1px solid #000', 
-                                    pageBreakAfter: 'always', 
-                                    background: '#fff', 
-                                    display: 'flex', 
-                                    flexDirection: 'column', 
+                            <div
+                                key={index}
+                                className="label-etiq-a4"
+                                style={{
+                                    width: '210mm',
+                                    height: '297mm',
+                                    margin: '0mm auto',
+                                    padding: '0mm',
+                                    boxSizing: 'border-box',
+                                    border: '1px solid #000',
+                                    pageBreakAfter: 'always',
+                                    background: '#fff',
+                                    display: 'flex',
+                                    flexDirection: 'column',
                                     justifyContent: 'flex-start',
                                     alignItems: 'center',
                                     minHeight: '297mm',
@@ -70,7 +70,7 @@ const EtiquetasVolumeKT = () => {
                                         <col style={{ width: '50%' }} />
                                         <col style={{ width: '30%' }} />
                                         <col style={{ width: '20%' }} />
-                                    </colgroup>                                    
+                                    </colgroup>
                                     <tbody>
                                         <tr>
                                             <td style={estiloTdNegrito}>Origin:</td>
@@ -108,12 +108,12 @@ const EtiquetasVolumeKT = () => {
                                         <tr>
                                             <td style={estiloTdNegrito}>Gross weight:</td>
                                             <td style={estiloTd} colSpan="2">{String(item.gross).replace(',', '.')}kg</td>
-                                            
+
                                         </tr>
                                         <tr>
                                             <td style={{ ...estiloTdNegrito, fontSize: '40px', textAlign: 'center' }} colSpan="3">
                                                 {item.tipo + ' ' +
-                                                    String(item.grade)?.split('/')[0].trim().padStart(7, '0') + ' ' +
+                                                    String(item.grade).trim().padStart(7, '0') + ' ' +
                                                     String(item.ano).substring(2, 4) + ' ' +
                                                     String(item.order)?.split('/')[0].trim().padStart(5, '0') + ' ' +
                                                     String(item.numero).padStart(4, '0') + ' ' +
@@ -126,13 +126,13 @@ const EtiquetasVolumeKT = () => {
                                     <Barcode
                                         value={
                                             item.tipo +
-                                            String(item.grade)?.split('/')[0].trim().padStart(7, '0') +
+                                            String(item.grade).trim().padStart(7, '0') +
                                             String(item.ano).substring(2, 4) +
                                             String(item.order)?.split('/')[0].trim().padStart(5, '0') +
                                             String(item.numero).padStart(4, '0') +
                                             String(item.net).padEnd(5, '0')
                                             || ''}
-                                        height={100} width={3} fontSize={18}
+                                        height={100} width={2.7} fontSize={18}
                                         format='CODE128'
                                         displayValue={false}
                                     />
