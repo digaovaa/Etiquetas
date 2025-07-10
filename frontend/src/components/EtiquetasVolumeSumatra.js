@@ -60,7 +60,7 @@ const EtiquetasVolumeSumatra = () => {
                                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                                             <span style={{ fontSize: '92px', fontWeight: 'bold', marginLeft: '10px' }}>{`${item.numero}`}</span>
                                             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingRight: '20px' }}>
-                                                <QRCode value={item.caixa} size={230} />
+                                                <QRCode value={item.caixa} size={180} style={{ marginTop: '70px' }}/>
                                                 <div style={{ marginTop: '10px' }}>
                                                     <div style={{ fontSize: '12px', textAlign: 'center', marginBottom: '15px', fontWeight: 'bold', marginLeft: '-30px' }}>{item.caixa}</div>
                                                 </div>
