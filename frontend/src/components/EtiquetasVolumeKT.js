@@ -99,7 +99,7 @@ const EtiquetasVolumeKT = () => {
                                         </tr>
                                         <tr>
                                             <td style={estiloTdNegrito}>Net weight:</td>
-                                            <td style={estiloTd} colSpan="2">{item.net}</td>
+                                            <td style={estiloTd} colSpan="2">{item.net}kg</td>
                                         </tr>
                                         <tr>
                                             <td style={estiloTdNegrito}>Tare:</td>
